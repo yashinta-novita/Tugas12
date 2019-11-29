@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.aplikasikrs.Admin.CreateDosenActivity;
 import com.example.aplikasikrs.Admin.Model.Dosen;
 import com.example.aplikasikrs.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -40,9 +41,15 @@ public class DosenAdapter extends RecyclerView.Adapter<DosenAdapter.ViewHolder> 
         holder.txtNidn.setText(dataList.get(position).getNidn());
         holder.txtNamaDosen.setText(dataList.get(position).getNamaDosen());
         holder.txtGelar.setText(dataList.get(position).getGelar());
-        holder.txtAlamat.setText(dataList.get(position).getAlamatDsn());
-        holder.txtEmail.setText(dataList.get(position).getEmailDsn());
-        holder.imgFoto.setImageResource(dataList.get(position).getFotoDsn());
+        holder.txtAlamat.setText(dataList.get(position).getAlamat());
+        holder.txtEmail.setText(dataList.get(position).getEmail());
+        holder.imgFoto.getLayoutParams().width = 200;
+        holder.imgFoto.getLayoutParams().height = 200;
+        if(dataList.get(position).getFoto() != null){
+            Picasso.with(this.context)
+                    .load(dataList.get(position).getFoto())
+                    .into(holder.imgFoto);
+        }
         holder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,8 +60,10 @@ public class DosenAdapter extends RecyclerView.Adapter<DosenAdapter.ViewHolder> 
         });
     }
 
+
     @Override
     public int getItemCount() {
+
         return (dataList != null)? dataList.size() : 0;
     }
 

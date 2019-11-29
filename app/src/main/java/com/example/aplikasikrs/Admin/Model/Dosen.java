@@ -1,68 +1,88 @@
 package com.example.aplikasikrs.Admin.Model;
 
-public class Dosen {
-    private String namaDosen;
-    private String nidn;
-    private String gelar;
-    private String emailDsn;
-    private String alamatDsn;
-    private int fotoDsn;
+import com.google.gson.annotations.SerializedName;
 
-    public Dosen(String namaDosen, String nidn, String gelar, String emailDsn, String alamatDsn, int fotoDsn) {
-        this.nidn = nidn;
-        this.namaDosen = namaDosen;
-        this.gelar = gelar;
-        this.emailDsn = emailDsn;
-        this.alamatDsn = alamatDsn;
-        this.fotoDsn = fotoDsn;
-    }
+    public class Dosen {
+        @SerializedName("id")
+        private String id;
+        @SerializedName("nidn")
+        private String nidn;
+        @SerializedName("namaDosen")
+        private String namaDosen;
+        @SerializedName("gelar")
+        private String gelar;
+        @SerializedName("email")
+        private String email;
+        @SerializedName("alamat")
+        private String alamat;
+        @SerializedName("foto")
+        private String foto;
 
-    public String getNamaDosen() {
-        return namaDosen;
-    }
+        public Dosen(String id, String nidn, String namaDosen, String gelar, String email, String alamat, String foto) {
+            this.nidn = nidn;
+            this.namaDosen = namaDosen;
+            this.gelar = gelar;
+            this.email = email;
+            this.alamat = alamat;
+            this.foto = foto;
+            this.id = id;
+        }
 
-    public void setNamaDosen(String namaDosen) {
-        this.namaDosen = namaDosen;
-    }
 
-    public String getNidn() {
-        return nidn;
-    }
+        public String getId() {
+            return id;
+        }
 
-    public void setNidn(String nidn) {
-        this.nidn = nidn;
-    }
+        public void setId(String id) {
+            this.id = id;
+        }
 
-    public String getGelar() {
-        return gelar;
-    }
+        public String getNidn() {
+            return nidn;
+        }
 
-    public void setGelar(String gelar) {
-        this.gelar = gelar;
-    }
+        public void setNidn(String nidn) {
+            this.nidn = nidn;
+        }
 
-    public String getEmailDsn() {
-        return emailDsn;
-    }
+        public String getNamaDosen() {
+            return namaDosen;
+        }
 
-    public void setEmailDsn(String emailDsn) {
-        this.emailDsn = emailDsn;
-    }
+        public void setNamaDosen(String namaDosen) {
+            this.namaDosen = namaDosen;
+        }
 
-    public String getAlamatDsn() {
-        return alamatDsn;
-    }
+        public String getGelar() {
+            return gelar;
+        }
 
-    public void setAlamatDsn(String alamatDsn) {
-        this.alamatDsn = alamatDsn;
-    }
+        public void setGelar(String gelar) {
+            this.gelar = gelar;
+        }
 
-    public int getFotoDsn() {
-        return fotoDsn;
-    }
+        public String getEmail() {
+            return email;
+        }
 
-    public void setFotoDsn(int fotoDsn) {
-        this.fotoDsn = fotoDsn;
+        public void setEmail(String email) {
+            this.email = email;
+        }
+
+        public String getAlamat() {
+            return alamat;
+        }
+
+        public void setAlamat(String alamat) {
+            this.alamat = alamat;
+        }
+
+        public String getFoto() {
+            return foto;
+        }
+
+        public void setFoto(String foto) {
+            this.foto = foto;
+        }
     }
-}
 
